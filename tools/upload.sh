@@ -3,7 +3,7 @@ FILES=(server_trunk/bin/GateServerD server_trunk/bin/DBServerD server_trunk/shar
 TARGETPATH=/tmp/server
 DEST=ty1
 USER=root
-PASSWORD=topform@2107
+PASSWORD=****
 EXCEPT=.svn
 
 #递归 压缩 显示信息  判断文件完整性
