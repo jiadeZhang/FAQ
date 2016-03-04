@@ -1,9 +1,9 @@
 #!/bin/sh
 FILES=(server_trunk/bin/GateServerD server_trunk/bin/DBServerD server_trunk/sharedata)
 TARGETPATH=/tmp/server
-DEST=(115.159.117.118)
+DEST=(111.111.111.111.)
 USER=root
-PASSWORD=topform@2107
+PASSWORD=password
 EXCEPT=.svn
 
 RSYNC_FLAG=rzvI
