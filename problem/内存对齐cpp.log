@@ -39,7 +39,7 @@ struct SSlotInfo
 	};
 
 	int rate_;
-	std::map<int, int> vip_sure_;	//vip重置保底次数
+	std::map<int, int> vip_sure_;	
 	std::vector<PlayerReward> rewards_;
 };
 #pack pop
