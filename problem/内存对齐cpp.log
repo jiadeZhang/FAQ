@@ -1,0 +1,45 @@
+在内存对齐中使用map，vector,引起map的随机位置崩溃。
+#pragma pack (4)
+class PlayerReward
+{
+public:
+	PlayerReward():reward_type_(0), reward_id_(0), reward_count_(0){}
+	PlayerReward(const PlayerReward& other)
+	{
+		reward_type_ = other.reward_type_;
+		reward_id_ = other.reward_id_;
+		reward_count_ = other.reward_count_;
+	}
+	bool operator == (const PlayerReward& reward) const
+	{
+		float dd = reward_count_ - reward.reward_count_;
+		return reward_type_ == reward.reward_type_ && reward_id_ == reward.reward_id_ && dd>=-0.000001f && dd<=0.000001f;
+	}
+	bool operator == (const unsigned char type) const
+	{
+		return reward_type_ == type;
+	}
+	void operator = (const PlayerReward& reward)
+	{
+		reward_type_ = reward.reward_type_;
+		reward_id_ = reward.reward_id_;
+		reward_count_ = reward.reward_count_;
+		return;
+	}
+	unsigned char	reward_type_;
+	int				reward_id_;
+	float			reward_count_;
+};
+
+struct SSlotInfo
+{
+	SSlotInfo()
+	{
+		rate_ = 0;
+	};
+
+	int rate_;
+	std::map<int, int> vip_sure_;	//vip重置保底次数
+	std::vector<PlayerReward> rewards_;
+};
+#pack pop
